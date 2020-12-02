@@ -1,0 +1,15 @@
+{
+  "name": "@emotion-kit/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A collection of UI components styled with Emotion",
+  "keywords": [],
+  "author": "Manuel Vila <hi@mvila.me>",
+  "license": "MIT",
+  "repository": "https://github.com/mvila/emotion-kit",
+  "prettier": "@mvila/prettierrc",
+  "devDependencies": {
+    "@mvila/prettierrc": "^1.1.0",
+    "prettier": "^2.1.2"
+  }
+}
