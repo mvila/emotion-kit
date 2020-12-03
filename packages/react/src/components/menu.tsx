@@ -37,7 +37,7 @@ export function Menu({
 
           return (
             <MenuItemComponent key={index} onClick={handleClick} size={size} disabled={disabled}>
-              {label}
+              {typeof label === 'function' ? label() : label}
             </MenuItemComponent>
           );
         }

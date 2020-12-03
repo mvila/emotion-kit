@@ -12,7 +12,6 @@ ReactDOM.render(
     <EmotionKit>
       <Playground />
     </EmotionKit>
-    ,
   </EmotionStarter>,
   document.getElementById('root')
 );

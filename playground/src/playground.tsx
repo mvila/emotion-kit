@@ -111,9 +111,12 @@ export function Playground() {
             }
           },
           {label: 'Duplicate'},
-          {label: 'Remove', disabled: true},
+          {
+            label: 'Remove',
+            disabled: true
+          },
           {type: 'divider'},
-          {label: 'Preview'}
+          {label: () => <strong>Preview</strong>}
         ]}
       >
         {({open}) => (
