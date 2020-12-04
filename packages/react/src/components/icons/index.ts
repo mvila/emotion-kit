@@ -8,3 +8,4 @@ export * from './delete';
 export * from './edit';
 export * from './error';
 export * from './help';
+export * from './launch';
