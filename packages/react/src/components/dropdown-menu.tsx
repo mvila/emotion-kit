@@ -2,6 +2,7 @@ import {jsx, useTheme} from '@emotion/react';
 
 import {Popover, PopoverProps} from './popover';
 import {Menu, MenuItem} from './menu';
+import {Box} from './box';
 
 export function DropdownMenu({
   items = [],
@@ -21,16 +22,15 @@ export function DropdownMenu({
       alignment={alignment}
       position={position}
       content={({close}: {close: () => void}) => (
-        <div
+        <Box
           css={{
             minWidth: '8rem',
             backgroundColor: theme.colors.background.normal,
-            border: `1px solid ${theme.colors.border.normal}`,
             borderRadius: theme.radii[size]
           }}
         >
           <Menu items={items} onClick={close} size={size} />
-        </div>
+        </Box>
       )}
       contentClassName={className}
     >

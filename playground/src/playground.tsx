@@ -1,7 +1,7 @@
 import {useCallback} from 'react';
 import {jsx, useTheme} from '@emotion/react';
 import {Button} from '@emotion-starter/react';
-import {Badge, DropdownMenu, Popover} from '@emotion-kit/react';
+import {Badge, DropdownMenu, Popover, Box} from '@emotion-kit/react';
 
 export function Playground() {
   const theme = useTheme();
@@ -134,7 +134,7 @@ export function Playground() {
         alignment="left" // 'left' | 'right'
         position="bottom" // 'bottom' | 'top' | 'cursor'
         content={
-          <div
+          <Box
             css={{
               width: 200,
               height: 100,
@@ -145,7 +145,7 @@ export function Playground() {
             }}
           >
             Content
-          </div>
+          </Box>
         }
       >
         {({open}) => (
