@@ -70,7 +70,7 @@ function MenuItemComponent({
     css = {
       ...css,
       'cursor': 'pointer',
-      ':hover': {backgroundColor: theme.colors.background.highlighted}
+      ':hover': {backgroundColor: theme.colors.background.moreHighlighted}
     };
   } else {
     css = {...css, cursor: 'not-allowed', opacity: 0.5};
