@@ -1,4 +1,5 @@
 export * from './badge';
+export * from './combo-box';
 export * from './container';
 export * from './dropdown-menu';
 export * from './box';

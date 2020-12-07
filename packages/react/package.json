@@ -1,6 +1,6 @@
 {
   "name": "@emotion-kit/react",
-  "version": "1.0.34",
+  "version": "1.0.39",
   "description": "A collection of React components styled with Emotion",
   "keywords": [],
   "author": "Manuel Vila <hi@mvila.me>",
@@ -21,6 +21,7 @@
     "update": "dev-tools update:dependencies"
   },
   "dependencies": {
+    "downshift": "^6.0.6",
     "lodash": "^4.17.20",
     "react-style-reset": "^1.3.2",
     "tslib": "^2.0.3"
@@ -32,7 +33,7 @@
     "react-dom": ">=17.0.1"
   },
   "devDependencies": {
-    "@emotion-starter/react": "^1.0.44",
+    "@emotion-starter/react": "^1.0.47",
     "@emotion/react": "^11.1.2",
     "@mvila/dev-tools": "^1.0.26",
     "@mvila/tsconfig": "^1.0.4",
