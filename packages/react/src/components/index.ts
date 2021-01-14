@@ -7,3 +7,4 @@ export * from './icons';
 export * from './menu';
 export * from './popover';
 export * from './section';
+export * from './stack';

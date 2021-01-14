@@ -1,7 +1,7 @@
 import {useState, useCallback} from 'react';
 import {jsx, useTheme} from '@emotion/react';
 import {Button, Input} from '@emotion-starter/react';
-import {Badge, DropdownMenu, ComboBox, Popover, Box} from '@emotion-kit/react';
+import {Badge, DropdownMenu, ComboBox, Popover, Box, Stack} from '@emotion-kit/react';
 
 export function Playground() {
   const theme = useTheme();
@@ -15,6 +15,11 @@ export function Playground() {
   const [country, setCountry] = useState('');
 
   const sectionStyle = {marginTop: 0};
+
+  const stackItemStyle = {
+    padding: '.75rem 1rem',
+    backgroundColor: theme.colors.background.moreHighlighted
+  };
 
   return (
     <div style={{maxWidth: '700px', margin: '40px auto'}}>
@@ -172,6 +177,26 @@ export function Playground() {
           </Button>
         )}
       </Popover>
+
+      <hr />
+
+      <h3 css={sectionStyle}>Stack</h3>
+
+      <h4>Row</h4>
+
+      <Stack spacing="1rem">
+        <div css={stackItemStyle}>One</div>
+        <div css={stackItemStyle}>Two</div>
+        <div css={stackItemStyle}>Three</div>
+      </Stack>
+
+      <h4>Column</h4>
+
+      <Stack direction="column" spacing="1rem">
+        <div css={stackItemStyle}>One</div>
+        <div css={stackItemStyle}>Two</div>
+        <div css={stackItemStyle}>Three</div>
+      </Stack>
     </div>
   );
 }
