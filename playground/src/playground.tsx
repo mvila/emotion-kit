@@ -190,6 +190,16 @@ export function Playground() {
         <div css={stackItemStyle}>Three</div>
       </Stack>
 
+      <h4>Row (with wrap)</h4>
+
+      <Box css={{width: 225, padding: '1rem'}}>
+        <Stack wrap spacing="1rem">
+          <div css={stackItemStyle}>One</div>
+          <div css={stackItemStyle}>Two</div>
+          <div css={stackItemStyle}>Three</div>
+        </Stack>
+      </Box>
+
       <h4>Column</h4>
 
       <Stack direction="column" spacing="1rem">
@@ -197,6 +207,16 @@ export function Playground() {
         <div css={stackItemStyle}>Two</div>
         <div css={stackItemStyle}>Three</div>
       </Stack>
+
+      <h4>Column (with wrap)</h4>
+
+      <Box css={{padding: '1rem'}}>
+        <Stack direction="column" wrap spacing="1rem" css={{height: 150}}>
+          <div css={stackItemStyle}>One</div>
+          <div css={stackItemStyle}>Two</div>
+          <div css={stackItemStyle}>Three</div>
+        </Stack>
+      </Box>
     </div>
   );
 }
