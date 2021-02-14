@@ -4,11 +4,13 @@ import {ColorName} from '@emotion-starter/react';
 export function Badge({
   color = 'neutral',
   variant = 'normal',
+  title,
   className,
   children
 }: {
   color?: ColorName;
   variant?: 'normal' | 'outline';
+  title?: string;
   className?: string;
   children: React.ReactNode;
 }) {
@@ -48,7 +50,7 @@ export function Badge({
   };
 
   return (
-    <div className={className} css={css}>
+    <div title={title} className={className} css={css}>
       {children}
     </div>
   );
