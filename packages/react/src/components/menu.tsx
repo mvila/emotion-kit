@@ -1,12 +1,15 @@
 import {jsx, useTheme} from '@emotion/react';
 import compact from 'lodash/compact';
 
-export type MenuItem = {
-  type?: 'item' | 'divider';
-  label?: React.ReactNode;
-  onClick?: (event: React.MouseEvent) => void;
-  disabled?: boolean;
-};
+export type MenuItem =
+  | {
+      type?: 'item' | 'divider';
+      label?: React.ReactNode;
+      onClick?: (event: React.MouseEvent) => void;
+      disabled?: boolean;
+    }
+  | undefined
+  | false;
 
 export function Menu({
   items = [],
