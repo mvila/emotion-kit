@@ -1,6 +1,6 @@
 import {useState, useCallback} from 'react';
 import {jsx, useTheme} from '@emotion/react';
-import {Button, Input} from '@emotion-starter/react';
+import {Button} from '@emotion-starter/react';
 import {Badge, DropdownMenu, ComboBox, Popover, Box, Stack} from '@emotion-kit/react';
 
 export function Playground() {
@@ -70,6 +70,9 @@ export function Playground() {
           <Badge color="secondary">Secondary</Badge>
         </div>
         <div css={{marginRight: '.5rem'}}>
+          <Badge color="tertiary">Tertiary</Badge>
+        </div>
+        <div css={{marginRight: '.5rem'}}>
           <Badge color="positive">Positive</Badge>
         </div>
         <div css={{marginRight: '.5rem'}}>
@@ -91,6 +94,11 @@ export function Playground() {
         <div css={{marginRight: '.5rem'}}>
           <Badge color="secondary" variant="outline">
             Secondary
+          </Badge>
+        </div>
+        <div css={{marginRight: '.5rem'}}>
+          <Badge color="tertiary" variant="outline">
+            Tertiary
           </Badge>
         </div>
         <div css={{marginRight: '.5rem'}}>
