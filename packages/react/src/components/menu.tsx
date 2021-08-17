@@ -21,22 +21,30 @@ export function Menu({
   size?: 'normal' | 'small';
 }) {
   return (
-    <div css={{padding: size !== 'small' ? '.5rem 0' : '.3rem 0'}}>
+    <div css={{padding: size !== 'small' ? '.5rem 0' : '.3rem 0', userSelect: 'none'}}>
       {compact(items).map(
         ({type = 'item', label, onClick: itemOnClick, disabled = false}, index) => {
+          if (disabled) {
+            itemOnClick = undefined;
+          }
+
           if (type === 'divider') {
             return <MenuDividerComponent key={index} size={size} />;
           }
 
-          const handleClick = (event: React.MouseEvent) => {
-            if (menuOnClick !== undefined) {
-              menuOnClick(event);
-            }
+          let handleClick: ((event: React.MouseEvent) => void) | undefined;
 
-            if (itemOnClick !== undefined) {
-              itemOnClick(event);
-            }
-          };
+          if (itemOnClick !== undefined) {
+            handleClick = (event) => {
+              if (menuOnClick !== undefined) {
+                menuOnClick(event);
+              }
+
+              if (itemOnClick !== undefined) {
+                itemOnClick(event);
+              }
+            };
+          }
 
           return (
             <MenuItemComponent key={index} onClick={handleClick} size={size} disabled={disabled}>
@@ -69,18 +77,18 @@ function MenuItemComponent({
     whiteSpace: 'nowrap'
   };
 
-  if (!disabled) {
+  if (onClick !== undefined) {
     css = {
       ...css,
       'cursor': 'pointer',
       ':hover': {backgroundColor: theme.colors.background.moreHighlighted}
     };
-  } else {
+  } else if (disabled) {
     css = {...css, cursor: 'not-allowed', opacity: 0.5};
   }
 
   return (
-    <div onClick={!disabled ? onClick : undefined} css={css}>
+    <div onClick={onClick} css={css}>
       {children}
     </div>
   );
