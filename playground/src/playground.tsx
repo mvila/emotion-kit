@@ -1,7 +1,19 @@
 import {useState, useCallback} from 'react';
 import {jsx, useTheme} from '@emotion/react';
 import {Button} from '@emotion-starter/react';
-import {Badge, DropdownMenu, ComboBox, Popover, Box, Stack} from '@emotion-kit/react';
+import {
+  Form,
+  Control,
+  Label,
+  TextInput,
+  ButtonBar,
+  Badge,
+  DropdownMenu,
+  ComboBox,
+  Popover,
+  Box,
+  Stack
+} from '@emotion-kit/react';
 
 export function Playground() {
   const theme = useTheme();
@@ -11,6 +23,13 @@ export function Playground() {
   const setMode = useCallback((mode: string) => {
     window.localStorage.setItem('mode', mode);
   }, []);
+
+  const [firstName, setFirstName] = useState('');
+  const [lastName, setLastName] = useState('');
+
+  const submit = useCallback(() => {
+    alert(JSON.stringify({firstName, lastName}));
+  }, [firstName, lastName]);
 
   const [country, setCountry] = useState('');
 
@@ -54,6 +73,36 @@ export function Playground() {
           Dark mode
         </a>
       </div>
+
+      <h3 css={sectionStyle}>Form</h3>
+
+      <Box css={{maxWidth: 300, padding: '1.5rem'}}>
+        <Form onSubmit={submit}>
+          <Stack direction="column">
+            <Control>
+              <Label>First name</Label>
+              <TextInput value={firstName} onChange={setFirstName} />
+            </Control>
+
+            <Control>
+              <Label>Last name</Label>
+              <TextInput value={lastName} onChange={setLastName} />
+            </Control>
+          </Stack>
+
+          <ButtonBar css={{marginTop: '1.5rem'}}>
+            <Button type="submit" color="primary">
+              Submit
+            </Button>
+
+            <Button type="button" variant="outline">
+              Cancel
+            </Button>
+          </ButtonBar>
+        </Form>
+      </Box>
+
+      <hr />
 
       <h3 css={sectionStyle}>Badge</h3>
 
