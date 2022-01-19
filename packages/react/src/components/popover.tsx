@@ -34,12 +34,13 @@ export function Popover({
 
   const open = useCallback((event, context) => {
     if (event !== undefined) {
-      event.stopPropagation();
       overlayPositionRef.current = getOverlayPosition(event);
     }
     contextRef.current = context;
     setIsOpen(true);
-    addEventListeners();
+    setTimeout(() => {
+      addEventListeners();
+    }, 0);
   }, []);
 
   const close = useCallback(() => {

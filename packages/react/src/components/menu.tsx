@@ -88,7 +88,14 @@ function MenuItemComponent({
   }
 
   return (
-    <div onClick={onClick} css={css}>
+    <div
+      onClick={(event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        onClick?.(event);
+      }}
+      css={css}
+    >
       {children}
     </div>
   );
