@@ -1,5 +1,7 @@
 export * from './account';
 export * from './add';
+export * from './arrow-back';
+export * from './arrow-forward';
 export * from './chevron-down';
 export * from './chevron-left';
 export * from './chevron-right';
