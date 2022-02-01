@@ -5,14 +5,17 @@ import {jsx} from '@emotion/react';
 export function ChevronLeftIcon({
   size = 32,
   color = 'currentColor',
+  onClick,
   className
 }: {
   size?: number;
   color?: string;
+  onClick?: (event: React.MouseEvent) => void;
   className?: string;
 }) {
   return (
     <svg
+      onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}

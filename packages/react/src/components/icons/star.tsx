@@ -6,15 +6,18 @@ export function StarIcon({
   size = 32,
   color = 'currentColor',
   outline = false,
+  onClick,
   className
 }: {
   size?: number;
   color?: string;
   outline?: boolean;
+  onClick?: (event: React.MouseEvent) => void;
   className?: string;
 }) {
   return (
     <svg
+      onClick={onClick}
       xmlns="http://www.w3.org/2000/svg"
       width={size}
       height={size}
