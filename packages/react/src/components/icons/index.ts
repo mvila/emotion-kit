@@ -12,6 +12,7 @@ export * from './edit';
 export * from './error';
 export * from './flag';
 export * from './help';
+export * from './info';
 export * from './launch';
 export * from './list';
 export * from './more-horizontal';
