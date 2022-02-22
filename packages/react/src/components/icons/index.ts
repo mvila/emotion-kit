@@ -20,3 +20,5 @@ export * from './more-vertical';
 export * from './settings';
 export * from './star';
 export * from './view-list';
+export * from './visibility';
+export * from './visibility-off';

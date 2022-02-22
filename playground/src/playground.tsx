@@ -6,6 +6,7 @@ import {
   Control,
   Label,
   TextInput,
+  PasswordInput,
   ButtonBar,
   Badge,
   DropdownMenu,
@@ -24,12 +25,12 @@ export function Playground() {
     window.localStorage.setItem('mode', mode);
   }, []);
 
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   const submit = useCallback(() => {
-    alert(JSON.stringify({firstName, lastName}));
-  }, [firstName, lastName]);
+    alert(JSON.stringify({firstName: username, lastName: password}));
+  }, [username, password]);
 
   const [country, setCountry] = useState('');
 
@@ -80,13 +81,13 @@ export function Playground() {
         <Form onSubmit={submit}>
           <Stack direction="column">
             <Control>
-              <Label>First name</Label>
-              <TextInput value={firstName} onChange={setFirstName} />
+              <Label>Username</Label>
+              <TextInput value={username} onChange={setUsername} />
             </Control>
 
             <Control>
-              <Label>Last name</Label>
-              <TextInput value={lastName} onChange={setLastName} />
+              <Label>Password</Label>
+              <PasswordInput value={password} onChange={setPassword} />
             </Control>
           </Stack>
 
