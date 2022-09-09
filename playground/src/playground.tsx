@@ -7,6 +7,7 @@ import {
   Label,
   TextInput,
   PasswordInput,
+  TextArea,
   ButtonBar,
   Badge,
   DropdownMenu,
@@ -27,10 +28,11 @@ export function Playground() {
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [comments, setComments] = useState('');
 
   const submit = useCallback(() => {
-    alert(JSON.stringify({firstName: username, lastName: password}));
-  }, [username, password]);
+    alert(JSON.stringify({username, password, comments}));
+  }, [username, password, comments]);
 
   const [country, setCountry] = useState('');
 
@@ -88,6 +90,11 @@ export function Playground() {
             <Control>
               <Label>Password</Label>
               <PasswordInput value={password} onChange={setPassword} />
+            </Control>
+
+            <Control>
+              <Label>Comments</Label>
+              <TextArea value={comments} onChange={setComments} />
             </Control>
           </Stack>
 

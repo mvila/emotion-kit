@@ -1,6 +1,6 @@
 import {useState, useCallback, forwardRef} from 'react';
 import {jsx, useTheme} from '@emotion/react';
-import {Input} from '@emotion-starter/react';
+import {Input, TextArea as StarterTextArea} from '@emotion-starter/react';
 
 import {VisibilityIcon, VisibilityOffIcon} from './icons';
 
@@ -84,3 +84,21 @@ export const PasswordInput = forwardRef<HTMLInputElement, PasswordInputProps>(
     );
   }
 );
+
+export type TextAreaProps = Omit<Parameters<typeof StarterTextArea>[0], 'onChange'> & {
+  onChange?: (value: string) => void;
+};
+
+export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(function TextArea(
+  {onChange, ...otherProps}: TextAreaProps,
+  ref
+) {
+  const change = useCallback(
+    (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+      onChange?.(event.target.value);
+    },
+    [onChange]
+  );
+
+  return <StarterTextArea ref={ref} onChange={change} {...otherProps} />;
+});
