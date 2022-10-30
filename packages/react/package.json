@@ -1,6 +1,6 @@
 {
   "name": "@emotion-kit/react",
-  "version": "1.0.92",
+  "version": "1.0.94",
   "description": "A collection of React components styled with Emotion",
   "keywords": [],
   "author": "Manuel Vila <hi@mvila.me>",
@@ -12,7 +12,7 @@
   "main": "dist/node-cjs/index.js",
   "module": "dist/node-esm/index.js",
   "engines": {
-    "node": ">=10.0.0"
+    "node": ">=16.0.0"
   },
   "scripts": {
     "build": "dev-tools build:ts-library",
@@ -21,7 +21,7 @@
     "update": "dev-tools update:dependencies"
   },
   "dependencies": {
-    "downshift": "^6.1.9",
+    "downshift": "^6.1.12",
     "lodash": "^4.17.21",
     "react-style-reset": "^1.3.2",
     "tslib": "^2.4.0"
@@ -33,12 +33,12 @@
     "react-dom": ">=17.0.1"
   },
   "devDependencies": {
-    "@emotion-starter/react": "^1.0.74",
-    "@emotion/react": "^11.10.4",
-    "@mvila/dev-tools": "^1.0.30",
-    "@mvila/tsconfig": "^1.0.5",
-    "@types/lodash": "^4.14.184",
-    "@types/react": "^17.0.49",
-    "@types/react-dom": "^17.0.17"
+    "@emotion-starter/react": "^1.0.75",
+    "@emotion/react": "^11.10.5",
+    "@mvila/dev-tools": "^1.2.1",
+    "@mvila/tsconfig": "^1.0.6",
+    "@types/lodash": "^4.14.186",
+    "@types/react": "^17.0.52",
+    "@types/react-dom": "^17.0.18"
   }
 }
